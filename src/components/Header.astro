@@ -1,0 +1,57 @@
+---
+const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Blog", href: "/blog" },
+    { label: "Seven Tours", href: "https://www.seven.tours/" },
+];
+
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+---
+
+<header class="w-full bg-white shadow sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-5">
+        <a href="/" class="text-3xl font-bold text-indigo-600">
+            <Image src={logo} alt={"logo"} width={100} height={60} />
+        </a>
+        <ul class="hidden md:flex items-center space-x-8">
+            {
+                navItems.map((item) => (
+                    <li>
+                        <a
+                            href={item.href}
+                            class="text-gray-600 hover:text-indigo-600 transition duration-200"
+                        >
+                            {item.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <!-- Mobil Menü Butonu (yalnızca Tailwind & Astro kullanılarak) -->
+        <input type="checkbox" id="menu-toggle" class="peer hidden" />
+        <label for="menu-toggle" class="md:hidden cursor-pointer">
+            <div class="space-y-1.5">
+                <div class="w-6 h-0.5 bg-gray-600"></div>
+                <div class="w-6 h-0.5 bg-gray-600"></div>
+                <div class="w-6 h-0.5 bg-gray-600"></div>
+            </div>
+        </label>
+        <ul
+            class="absolute top-full left-0 right-0 bg-white shadow-lg flex-col space-y-4 py-4 items-center hidden peer-checked:flex md:hidden"
+        >
+            {
+                navItems.map((item) => (
+                    <li>
+                        <a
+                            href={item.href}
+                            class="text-gray-600 hover:text-indigo-600 transition duration-200"
+                        >
+                            {item.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>

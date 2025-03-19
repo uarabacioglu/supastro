@@ -1,0 +1,49 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-gray-800 text-white">
+    <div
+        class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6"
+    >
+        <!-- Sol Tarafta Logo ve Metin -->
+        <div class="text-center md:text-left">
+            <a
+                href="/"
+                class="text-3xl font-bold text-indigo-400 hover:text-indigo-300 transition duration-200"
+            >
+                Seven Tours
+            </a>
+            <p class="mt-2 text-gray-400 text-sm">
+                Hayallerindeki seyahate şimdi adım at!
+            </p>
+        </div>
+
+        <!-- Menü Linkleri -->
+        <nav class="flex space-x-4">
+            <a href="/" class="hover:text-indigo-300 transition duration-200"
+                >Anasayfa</a
+            >
+            <a
+                href="/blog"
+                class="hover:text-indigo-300 transition duration-200">Blog</a
+            >
+            <a
+                href="/about"
+                class="hover:text-indigo-300 transition duration-200"
+                >Hakkımızda</a
+            >
+            <a
+                href="/contact"
+                class="hover:text-indigo-300 transition duration-200"
+                >İletişim</a
+            >
+        </nav>
+    </div>
+
+    <div class="border-t border-gray-700 py-4 text-center">
+        <p class="text-gray-500 text-sm">
+            &copy; {year} Seven Tours. Tüm Hakları Saklıdır.
+        </p>
+    </div>
+</footer>

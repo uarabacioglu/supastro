@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/hero.png";
+---
+
+<section class="bg-gray-50">
+    <div
+        class="hero max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center gap-10"
+    >
+        <div class="w-full md:w-1/2">
+            <Image
+                src={heroImage}
+                alt="Hero Image"
+                class="w-full h-auto rounded-2xl shadow-xl object-cover"
+                width={800}
+                height={600}
+                loading="lazy"
+                decoding="async"
+            />
+        </div>
+
+        <div class="w-full md:w-1/2 flex flex-col items-start justify-center">
+            <h1
+                class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4"
+            >
+                Hayalindeki Tatil Seni Bekliyor!
+            </h1>
+            <p class="text-lg text-gray-600 mb-6">
+                Eşsiz rotalar, benzersiz deneyimler ve unutulmaz anılar için
+                hazır mısın?
+            </p>
+            <a
+                href="/blog"
+                class="inline-block bg-indigo-600 text-white py-3 px-6 rounded-full hover:bg-indigo-500 transition duration-300 shadow-lg"
+            >
+                Keşfetmeye Başla
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        min-height: calc(100vh - 80px);
+    }
+</style>
